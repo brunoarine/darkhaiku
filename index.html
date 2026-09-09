@@ -48,7 +48,6 @@
               <p>mourns in the ancient valley.</p>
               <p>Armies of hell shatter.</p>
           </div>
-      
       </main>
 
       
@@ -64,7 +63,25 @@
            });   
           </script>
           
+          <script type="application/javascript">
+          function randomIP() {
+              // Random public IPv4 address.
+              var octets = [];
+              for (var i = 0; i < 4; i++) {
+                  octets.push(Math.floor(Math.random() * 256));
+              }
+              return octets.join(".");
+          }
+          document.getElementById("random-link").addEventListener("click", function (e) {
+              e.preventDefault();
+              var ip = randomIP();
+              document.getElementById("ip").innerHTML = ip;
+              document.getElementById("haiku").innerHTML = generateHaiku(ip);
+          });
+          </script>
+          
           <div class="inner">
+              <p style="margin-bottom: 2em;"><a href="#" id="random-link">Generate a dark haiku for a random IP</a></p>
               <p>🖤</p>
               <p> Coded by <a href="https://twitter.com/brunoarine">@brunoarine</a>, inspired by <a href="https://github.com/gabemart/hipku">hipku</a></p>              
               <p>Why don't you <a href="https://www.buymeacoffee.com/brunoarine">buy me a book</a>? 📖</p>
