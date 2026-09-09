@@ -72,11 +72,13 @@
               }
               return octets.join(".");
           }
-          document.getElementById("random-link").addEventListener("click", function (e) {
-              e.preventDefault();
-              var ip = randomIP();
-              document.getElementById("ip").innerHTML = ip;
-              document.getElementById("haiku").innerHTML = generateHaiku(ip);
+          document.addEventListener("DOMContentLoaded", function () {
+              document.getElementById("random-link").addEventListener("click", function (e) {
+                  e.preventDefault();
+                  var ip = randomIP();
+                  document.getElementById("ip").innerHTML = ip;
+                  document.getElementById("haiku").innerHTML = generateHaiku(ip);
+              });
           });
           </script>
           
